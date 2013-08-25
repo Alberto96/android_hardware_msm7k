@@ -223,10 +223,7 @@ int mapFrameBufferLocked(struct private_module_t* module)
             * info.pixclock
     );
 
-    if (refreshRate == 0) {
-        // bleagh, bad info from the driver
-        refreshRate = 60*1000;  // 60 Hz
-    }
+    refreshRate = 60*1000;  // 60 Hz for MSM7225
 
     if (int(info.width) <= 0 || int(info.height) <= 0) {
         // the driver doesn't return that information
